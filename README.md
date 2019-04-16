@@ -2,7 +2,9 @@
 Use this repository to create a simple app, with the following features/details, that paginates a list of users. Usage of React Hooks & ES6+ language features, when appropriate, is encouraged.
 
 ### Instructions / Details
+
 - Create a private repo on GitHub/BitBucket with the source code from this repository
+    - To download this repo: `git clone https://bitbucket.org/appsintegrations/react-frontend-applicant-test.git`
 - Your application must work properly in both Chrome and Firefox.
 - Design is not taken into consideration but feel free to make it look nice if you wish.
 - Please do not spend more than 4 hours on this.
