@@ -3,7 +3,7 @@ Use this repository to create a simple app, with the following features/details,
 
 ### Instructions / Details
 
-- Create a private repo on GitHub/BitBucket with the source code from this repository
+- Create a public repo on GitHub/BitBucket with the source code from this repository
     - To download this repo: `git clone https://bitbucket.org/appsintegrations/react-frontend-applicant-test.git`
 - Your application must work properly in both Chrome and Firefox.
 - Design is not taken into consideration but feel free to make it look nice if you wish.
