@@ -5,10 +5,9 @@ Use this repository to create a simple app, with the following features/details,
 
 - Create a public repo on GitHub/BitBucket with the source code from this repository
     - To download this repo: `git clone https://bitbucket.org/appsintegrations/react-frontend-applicant-test.git`
-- Your application must work properly in both Chrome and Firefox.
 - Design is not taken into consideration but feel free to make it look nice if you wish.
 - Please do not spend more than 4 hours on this.
-- When finished, email us the link to the private repository. 
+- When finished, email us the link to the public repository. 
 
 #### Part 1
 - Fetch the users from [this endpoint](https://jsonplaceholder.typicode.com/users)
