@@ -1,22 +1,21 @@
 import React, { Component } from "react"
-import GetUsers from './Components/GetUsers'
+import MainPage from './Components/MainPage'
 
 class App extends Component {
     constructor() {
         super();
-        this.state = {
-            users: []
-        }
+        this.state = {}
     }
 
     render() {
         return (
         	<div>
-        		<h1>Industry Weapon Applicant Test</h1>
-                <GetUsers />
+        		<h1>Walcott Denison Applicant Test</h1>
+                <MainPage />
         	</div>
 
         )
     }
 };
+
 export default App
