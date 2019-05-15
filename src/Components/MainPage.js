@@ -145,11 +145,11 @@ class MainPage extends Component {
                 <form onSubmit={this.handleSubmit}>
                 <label>
                     First Name:
-                    <input type='text' id="first-name" pattern="[A-Za-z0-9]+" value={this.state.addFirstName} onChange={this.handleChange}/>
+                    <input type='text' id="first-name" pattern="[A-Za-z]+" value={this.state.addFirstName} onChange={this.handleChange}/>
                 </label>
                 <label>
                     Last Name:
-                    <input type='text' id="last-name" pattern="[A-Za-z0-9]+" value={this.state.addLastName} onChange={this.handleChange}/>
+                    <input type='text' id="last-name" pattern="[A-Za-z]+" value={this.state.addLastName} onChange={this.handleChange}/>
                 </label>
                 <label>
                     Email:
