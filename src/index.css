@@ -22,3 +22,7 @@ body {
   user-select: none;
   cursor: pointer;
 }
+
+#alternate-text {
+    color: green;
+}

@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import GetUsers from './Components/GetUsers'
-import Pagination from './Components/Pagination'
 
 class App extends Component {
     constructor() {

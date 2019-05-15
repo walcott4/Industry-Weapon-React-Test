@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import Pagination from './Pagination'
 
 class GetUsers extends Component {
     constructor() {
@@ -7,8 +6,10 @@ class GetUsers extends Component {
         this.state = {
             users: [],
             currentPage: 1,
+            totalPages: [],
             itemsPerPage: 5
         };
+
         this.handleClick = this.handleClick.bind(this);
     }
 
@@ -22,20 +23,46 @@ class GetUsers extends Component {
           this.setState({
               users: data
           });
-          console.log(this.state)
+
+          const { users, currentPage, itemsPerPage } = this.state;
+          const pageNumbers = [];
+          for (let i = 1; i <= Math.ceil(users.length / itemsPerPage); i++) {
+            pageNumbers.push(i);
+          }
+          this.setState({totalPages: pageNumbers})
 
       });
-
     }
 
     handleClick(event) {
-      this.setState({
-        currentPage: Number(event.target.id)
-      });
+        if (event.target.id == 'next') {
+            if (this.state.currentPage < this.state.totalPages.length){
+                this.setState({currentPage: this.state.currentPage + 1})
+                console.log(this.state.currentPage)
+            }
+            else {
+                console.log("bad")
+            }
+        }
+        else if (event.target.id == 'previous') {
+            if (this.state.currentPage > 1) {
+                this.setState({currentPage: this.state.currentPage - 1})
+            }
+            else {
+                console.log("bad previous")
+            }
+        }
     }
+
+
+
+//     function createPages() {
+//
+// }
 
     render() {
       const { users, currentPage, itemsPerPage } = this.state;
+      console.log(this.state.totalPages.length)
 
       // Logic for displaying users
       const indexOfLast = currentPage * itemsPerPage;
@@ -43,16 +70,17 @@ class GetUsers extends Component {
       const currentUsers = users.slice(indexOfFirst, indexOfLast);
 
       const renderUsers = currentUsers.map((user, index) => {
-        return <li key={index}>{user.name}</li>;
+        if (user.email.substr(user.email.length - 3) == 'biz') {
+            return <li id='alternate-text' key={index}>{user.name}</li>;
+        }
+        else {
+            return <li key={index}>{user.name}</li>;
+        }
       });
 
-      // Logic for displaying page numbers
-      const pageNumbers = [];
-      for (let i = 1; i <= Math.ceil(users.length / itemsPerPage); i++) {
-        pageNumbers.push(i);
-      }
 
-      const renderPageNumbers = pageNumbers.map(number => {
+
+      const renderPageNumbers = this.state.totalPages.map(number => {
         return (
           <li
             key={number}
@@ -70,9 +98,13 @@ class GetUsers extends Component {
           <ul>
             {renderUsers}
           </ul>
-          <ul id="page-numbers">
-            {renderPageNumbers}
-          </ul>
+          <h1 id="next" onClick={this.handleClick}>
+            Next
+          </h1>
+          <h1 id="previous" onClick={this.handleClick}>
+            Previous
+          </h1>
+          <h1> {this.state.currentPage} </h1>
         </div>
       );
       }
@@ -85,26 +117,4 @@ class GetUsers extends Component {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-//     render() {
-//         const users = this.state
-//         console.log(users)
-//         return (
-//             <div>
-//
-//             </div>
-//         );
-//     }
-//
-// };
 export default GetUsers;
